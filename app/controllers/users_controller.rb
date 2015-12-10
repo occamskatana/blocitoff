@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def show
+  	@item = @user.item.new(item_params)
+  	
 	  	if current_user
 	  	@user = User.find(current_user)
 	  	else
@@ -7,5 +9,9 @@ class UsersController < ApplicationController
 	  	end
   end
 
+private
 
+	def item_params
+		params.require(:item).permit(:name)
+	end
 end
