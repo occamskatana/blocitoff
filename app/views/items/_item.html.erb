@@ -1,10 +1,9 @@
 <h4>
 	<% @user.items.each do |item| %>
-	<% rawr = item.id %>
+	<% @rawr = item.id %>
 	<div class="container">
-		<%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok' %> &nbsp; <%= item.name %> 
+<div id="item-#{@rawr}"><%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %> &nbsp; <%= item.name %> </div>
 	</div>
-	<%= item.id %>
 	<br>
 	<% end %>
 </h4>

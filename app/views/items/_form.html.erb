@@ -1,4 +1,4 @@
-<%= form_for [@user, @user.items.new] do |f| %>
+<div class="js-form"><%= form_for [@user, @user.items.new], remote: :true do |f| %>
 
 	<div class="form-group">
 		<%= f.label :name, "Task Name" %>
@@ -10,3 +10,5 @@
 	</div>
 
 <% end %>
+
+</div>

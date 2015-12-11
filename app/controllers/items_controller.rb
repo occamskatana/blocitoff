@@ -13,9 +13,10 @@ class ItemsController < ApplicationController
   		flash[:error] = "Your item was not saved successfully"
   	end
 
-    redirect_to user_path(@user.id)
+    redirect_to :back
+    end
 
-  end
+
 
   def destroy
     
@@ -23,10 +24,13 @@ class ItemsController < ApplicationController
 
     if @item.destroy
       flash[:notice] = "Your item was successfully deleted"
-      #ajax shit here
-      redirect_to user_path
     else
       flash[:error] = "Your item could not be deleted for some reason. Please try again"
+    end
+
+  respond_to do |format|
+      format.html
+      format.js
     end
   end
 

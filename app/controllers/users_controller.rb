@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def show
-  	@user = current_user  
-  	@items = @user.items
+  	if current_user
+  		@user = current_user  
+  		@items = @user.items
+  	else
+  		redirect_to root_path
+  	end
 	end
 
 private
