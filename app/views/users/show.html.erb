@@ -13,10 +13,10 @@
 	<div class='col-md-6'>
 		<ul>
 			<li>User Email: <%= @user.email %></li>
-			<li>Last Sign In: <%= @user.last_sign_in_at %></li>
+			<%= render 'items/form'%>
+			<%= render 'items/item'%>
 		</ul>
 	</div>
 	<div class='col-md-3'>
-	<%= render 'items/form'%>
 	</div>
 </div>

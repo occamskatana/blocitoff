@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'items/create'
-
-  get 'users/show'
-
-  get 'welcome/index'
+ 
 
   devise_for :users, controllers: {
     sesssions: 'users/sessions'
