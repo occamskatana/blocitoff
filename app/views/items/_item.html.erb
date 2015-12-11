@@ -1,6 +1,10 @@
-<% @items.each do |f| %>
-<ul>
-	<li><%= f.name %> - by <%= f.user.name %></li>
+<h4>
+	<% @user.items.each do |item| %>
+	<% rawr = item.id %>
+	<div class="container">
+		<%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok' %> &nbsp; <%= item.name %> 
+	</div>
+	<%= item.id %>
 	<br>
-</ul>
-<% end %>
+	<% end %>
+</h4>

@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
 
   def create
-  	@user = User.find(params[:user_id])
-  	@items = @user.items.new(item_params)
-  	@new_item = Item.new
+  	@user = current_user
+  	@item = @user.items.new(item_params)
+    @items = @user.items
+  	
 
 
-  	if @items.save
+  	if @item.save
   		flash[:notice] = "Your item was saved successfully"
   	else
   		flash[:error] = "Your item was not saved successfully"
@@ -14,6 +15,19 @@ class ItemsController < ApplicationController
 
     redirect_to user_path(@user.id)
 
+  end
+
+  def destroy
+    
+    @item = Item.find(params[:id])
+
+    if @item.destroy
+      flash[:notice] = "Your item was successfully deleted"
+      #ajax shit here
+      redirect_to user_path
+    else
+      flash[:error] = "Your item could not be deleted for some reason. Please try again"
+    end
   end
 
 private

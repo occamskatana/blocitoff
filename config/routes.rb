@@ -2,16 +2,16 @@ Rails.application.routes.draw do
  
 
   devise_for :users, controllers: {
-    sesssions: 'users/sessions',
     registrations: 'registrations'
   }
 
   resources :users, only: [:show] do 
-    resources :items, only: [:create]
-  end
+    resources :items, only: [:create, :destroy] 
   
-  root to: 'users#show'
+end
+  
+  #root to: 'users#show'
 
   get 'welcome/about'
-  get 'welcome/index'
+  root to: 'welcome#index'
 end
