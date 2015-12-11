@@ -1,6 +1,6 @@
 
 <div class='container'>
-	<h1> This is the user profile of <%= @user.email %> </h1>
+	<h1> This is the user profile of <%= @user.name %> </h1>
 </div>
 
 
@@ -12,7 +12,7 @@
 	</div>
 	<div class='col-md-6'>
 		<ul>
-			<li>User Email: <%= @user.email %></li>
+			
 			<%= render 'items/form'%>
 			<%= render 'items/item'%>
 		</ul>

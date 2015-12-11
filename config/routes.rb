@@ -2,7 +2,8 @@ Rails.application.routes.draw do
  
 
   devise_for :users, controllers: {
-    sesssions: 'users/sessions'
+    sesssions: 'users/sessions',
+    registrations: 'registrations'
   }
 
   resources :users, only: [:show] do 
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   root to: 'users#show'
 
   get 'welcome/about'
+  get 'welcome/index'
 end
