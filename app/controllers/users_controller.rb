@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
+  	
   	if current_user
-  		@user = current_user  
+  		@user = User.find(params[:id])
   		@items = @user.items
   	else
   		redirect_to root_path
@@ -10,7 +11,4 @@ class UsersController < ApplicationController
 
 private
 
-	def item_params
-		params.require(:item).permit(:name)
-	end
 end

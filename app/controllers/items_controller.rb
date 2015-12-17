@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def create
-  	@user = current_user
+  	@user = User.find(params[:user_id])
   	@item = @user.items.new(item_params)
     @items = @user.items
   	
@@ -13,14 +13,19 @@ class ItemsController < ApplicationController
   		flash[:error] = "Your item was not saved successfully"
   	end
 
-    redirect_to :back
+    respond_to do |format| 
+      format.html {redirect_to user_path}
+      format.js
     end
+        
+  end
 
 
 
   def destroy
-    
+    @user = User.find(params[:user_id])
     @item = Item.find(params[:id])
+    @items = @user.items
 
     if @item.destroy
       flash[:notice] = "Your item was successfully deleted"
@@ -29,7 +34,7 @@ class ItemsController < ApplicationController
     end
 
   respond_to do |format|
-      format.html
+      format.html 
       format.js
     end
   end

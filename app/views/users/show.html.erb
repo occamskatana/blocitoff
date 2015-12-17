@@ -12,9 +12,11 @@
 	</div>
 	<div class='col-md-6'>
 		<ul>
-			
-			<%= render 'items/form'%>
-			<%= render "items/item" %>
+			<%= render partial: 'items/form', locals: {user: @user, item: @item} %>
+
+			<div id="itemlist">
+				<%= render @user.items %>
+			</div>
 		</ul>
 	</div>
 	<div class='col-md-3'>
