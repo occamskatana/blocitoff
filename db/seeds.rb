@@ -23,6 +23,14 @@ end
 			user: users.sample
 			)
 	end
+
+	150.times do 
+		item = Item.create!(
+			name: Faker::Hacker.say_something_smart,
+			user: users.sample,
+			created_at: (Time.now - 8.days)
+			)
+	end
 	items = Item.all
 
 	puts "#{items.count} Items created!"
