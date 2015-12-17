@@ -1,12 +1,14 @@
-<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
-		<div class="id-#{item.id}">
+<h4>
+	<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
+			<div class="id-#{item.id}">
 
-		<div class="container">
-			
-						<%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %> 
-						&nbsp; <%= item.name %>
+				<div class="container">
+								<%= item.distance_of_time_in_words(item.created_at, item.created_at + 7.days ) %>
+								<%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %> 
+								&nbsp; <%= item.name %>
 				</div>
 				<br>
-<% end %>
-		</div>
-	</h4>
+			</div>
+	<% end %>	
+</h4>
+
