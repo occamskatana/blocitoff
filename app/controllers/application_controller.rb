@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   before_action :define_user
 
   def define_user
-  	@user = User.find(params[:id])
+  	@user = current_user
   end
 end

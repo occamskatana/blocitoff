@@ -3,9 +3,11 @@
 			<div class="id-#{item.id}">
 
 				<div class="container">
+					<div class="items">
 								<%= item.distance_of_time_in_words(item.created_at, item.created_at + 7.days ) %> Left &nbsp |
 								<%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %> |
 								&nbsp; <%= item.name %>
+					</div>
 				</div>
 				<br>
 			</div>

@@ -1,6 +1,6 @@
 
 <div class='container'>
-	<h1> This is the user profile of <%= @user.name %> </h1>
+	<h1> <%= @user.name %>'s Tasks </h1>
 </div>
 
 
@@ -8,9 +8,7 @@
 <br>
 
 <div class='row'>
-	<div class='col-md-3'>
-	</div>
-	<div class='col-md-6'>
+	<div class='container'>
 		<ul>
 			<%= render partial: 'items/form', locals: {user: @user, item: @item} %>
 
@@ -18,7 +16,5 @@
 				<%= render @user.items %>
 			</div>
 		</ul>
-	</div>
-	<div class='col-md-3'>
 	</div>
 </div>
