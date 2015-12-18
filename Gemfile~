@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'pry-rails'
-
+gem 'faker'
 gem 'devise'
  gem 'bootstrap-sass'
    gem 'rspec-rails', '~> 3.0'
